@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YoungInvest | Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="bg-[#d7d7d7] text-zinc-950 dark:bg-slate-950 dark:text-white transition-all duration-300">
+
+    <div class="min-h-screen md:grid md:grid-cols-[245px_1fr]">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div>
+                <div class="brand">
+                    <div>
+                        <h1 class="text-2xl font-black leading-none">YoungInvest</h1>
+                        <p class="text-xs font-semibold opacity-80">Controle financeiro jovem</p>
+                    </div>
+                </div>
+
+                <nav class="menu">
+                    <a href="#" class="menu-link active">Dashboard</a>
+                    <a href="#" class="menu-link">Receitas</a>
+                    <a href="#" class="menu-link">Despesas</a>
+                    <a href="#" class="menu-link">Transações</a>
+                    <a href="#" class="menu-link">Metas</a>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <p class="text-sm font-bold">Meta principal</p>
+
+                <div class="mt-3">
+                    <div class="flex justify-between text-xs font-semibold">
+                        <span>Celular novo</span>
+                        <span>22%</span>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-fill w-[22%]"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="main-content">
+
+            <!-- Topo -->
+            <header class="topbar">
+                <div>
+                    <p class="text-sm font-bold text-green-700 dark:text-green-300">Dashboard financeiro</p>
+                    <h2 class="text-4xl md:text-5xl font-black tracking-tight">Olá, Usuário!</h2>
+                    <p class="mt-2 text-zinc-600 dark:text-zinc-300">Resumo da sua vida financeira neste mês.</p>
+                </div>
+
+                <div class="top-actions">
+                    <button onclick="trocarTema()" class="theme-button" title="Alternar modo claro/escuro">
+                        🌙
+                    </button>
+
+                    <div class="profile-card">
+                        <div class="profile-icon">👤</div>
+                        <div class="hidden sm:block">
+                            <p class="font-bold leading-none">Usuário</p>
+                            <p class="text-xs text-zinc-500 dark:text-zinc-300">Ver perfil</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Área principal -->
+            <section class="dashboard-grid">
+
+                <!-- Saldo -->
+                <article class="balance-card">
+                    <div class="relative z-10">
+                        <p class="text-sm font-bold opacity-80">Saldo atual</p>
+                        <h3 class="mt-2 text-5xl font-black">R$ 1.430,00</h3>
+                        <p class="mt-4 text-sm font-semibold opacity-85">+ R$ 280,00 em relação ao mês anterior</p>
+                    </div>
+
+                    <div class="balance-shape"></div>
+                </article>
+
+                <!-- Saúde financeira -->
+                <article class="card health-card">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="card-title">Saúde financeira</h3>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-300">Uso do orçamento mensal</p>
+                        </div>
+
+                        <span class="status-pill">Bom</span>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="flex justify-between text-sm font-bold">
+                            <span>R$ 720 usados</span>
+                            <span>36%</span>
+                        </div>
+
+                        <div class="progress">
+                            <div class="progress-fill w-[36%]"></div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Cards menores -->
+                <article class="mini-stat">
+                    <p>Receitas</p>
+                    <h3>R$ 2.150</h3>
+                    <span class="text-green-700 dark:text-green-300">+3 entradas</span>
+                </article>
+
+                <article class="mini-stat">
+                    <p>Despesas</p>
+                    <h3>R$ 720</h3>
+                    <span class="text-red-700 dark:text-red-300">-5 saídas</span>
+                </article>
+
+                <article class="mini-stat">
+                    <p>Disponível</p>
+                    <h3>R$ 1.430</h3>
+                    <span class="text-green-700 dark:text-green-300">dentro do limite</span>
+                </article>
+
+                <!-- Ações rápidas -->
+                <article class="card quick-area">
+                    <div class="flex items-center justify-between gap-4">
+                        <div>
+                            <h3 class="card-title">Ações rápidas</h3>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-300">Acesse as funções principais</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                        <button class="quick-button">+ Receita</button>
+                        <button class="quick-button">− Despesa</button>
+                        <button class="quick-button">Meta</button>
+                        <button class="quick-button">Pix</button>
+                    </div>
+                </article>
+
+                <!-- Transações -->
+                <article class="card transactions-area">
+                    <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <h3 class="card-title">Últimas transações</h3>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-300">Movimentações recentes da conta</p>
+                        </div>
+
+                        <a href="#" class="see-more">Ver todas</a>
+                    </div>
+
+                    <div class="mt-5 space-y-3">
+                        <div class="transaction-row">
+                            <div>
+                                <p class="font-bold">Freela de site</p>
+                                <span>Receita • 06/04/2026</span>
+                            </div>
+                            <strong class="positive">+750,00</strong>
+                        </div>
+
+                        <div class="transaction-row">
+                            <div>
+                                <p class="font-bold">Mercado</p>
+                                <span>Despesa • 10/04/2026</span>
+                            </div>
+                            <strong class="negative">-570,00</strong>
+                        </div>
+
+                        <div class="transaction-row">
+                            <div>
+                                <p class="font-bold">Netflix</p>
+                                <span>Assinatura • 19/03/2026</span>
+                            </div>
+                            <strong class="negative">-60,00</strong>
+                        </div>
+
+                        <div class="transaction-row">
+                            <div>
+                                <p class="font-bold">Transferência FIAP</p>
+                                <span>Receita • 25/03/2026</span>
+                            </div>
+                            <strong class="positive">+2.500,00</strong>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Metas -->
+                <article class="card goals-area">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 class="card-title">Metas</h3>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-300">Acompanhe seus objetivos</p>
+                        </div>
+
+                        <button class="small-button">Nova meta</button>
+                    </div>
+
+                    <div class="mt-5 space-y-5">
+                        <div>
+                            <div class="flex justify-between text-sm font-bold">
+                                <span>Celular novo</span>
+                                <span>R$ 550 / R$ 2.500</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill w-[22%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-bold">
+                                <span>Teclado novo</span>
+                                <span>R$ 100 / R$ 770</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill w-[13%]"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="flex justify-between text-sm font-bold">
+                                <span>Monitor novo</span>
+                                <span>R$ 330 / R$ 1.700</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-fill w-[19%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </section>
+        </main>
+    </div>
+
+        <!--Parte JS-->
+    <script>
+        function trocarTema() {
+            document.documentElement.classList.toggle('dark');
+
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.setItem('temaYoungInvest', 'dark');
+            } else {
+                localStorage.setItem('temaYoungInvest', 'light');
+            }
+        }
+
+        if (localStorage.getItem('temaYoungInvest') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+</body>
+</html>
